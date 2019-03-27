@@ -1,15 +1,18 @@
 {
-  "name": "btc-arbitrage",
-  "version": "1.0.0",
-  "description": "arbitrage",
-  "main": "index.js",
-  "repository": "https://github.com/icezeros/btc-arbitrage.git",
-  "author": "icezeros <icezeros@163.com>",
-  "license": "MIT",
-  "dependencies": {
-    "bignumber.js": "^8.1.1",
-    "ccxt": "^1.18.404",
-    "lodash": "^4.17.11",
-    "moment": "^2.24.0"
-  }
+    "name": "btc-arbitrage",
+    "version": "1.0.0",
+    "description": "arbitrage",
+    "main": "index.js",
+    "repository": "https://github.com/icezeros/btc-arbitrage.git",
+    "author": "icezeros <icezeros@163.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "bignumber.js": "^8.1.1",
+        "ccxt": "^1.18.404",
+        "lodash": "^4.17.11",
+        "moment": "^2.24.0"
+    }
 }
