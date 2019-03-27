@@ -48,6 +48,7 @@ async function sum() {
                 console.log(XBTC);
                 console.log(BTCUSDT);
                 console.log(XUSDT);
+                console.log(error);
             }
         }
     }
