@@ -18,8 +18,6 @@ const getMarket = async () => {
     const arrBTC = [];
     const arrZB = [];
     _.forEach(ticker, (v, k) => {
-        console.log('============ ticker =============');
-        console.log(k);
         if (k.endsWith('QC')) {
             arrQC.push(k);
         }
