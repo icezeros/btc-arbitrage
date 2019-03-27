@@ -15,7 +15,7 @@ async function sum() {
         // console.log();
         // console.log();
 
-        if (XBTC && XUSDT && BTCUSDT) {
+        if (XBTC && XBTC.info && XUSDT && XUSDT.info && BTCUSDT) {
             try {
                 const TR_PRICE = new BigNumber(XBTC.info.lastPrice).times(new BigNumber(BTCUSDT.info.lastPrice));
                 const XUSDT_PRICE = new BigNumber(XUSDT.info.lastPrice);
