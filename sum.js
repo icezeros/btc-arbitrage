@@ -55,6 +55,8 @@ async function getChainInfo(chain) {
     const tmpArr = chain.split('/');
     const chainInfo = await redis.hget(`binance:hash:${tmpArr[1]}`, tmpArr[0]);
     console.log('============ chainInfo =============');
+    console.log(`binance:hash:${tmpArr[1]}`);
+    console.log(tmpArr[0]);
     console.log(chainInfo);
     return JSON.parse(chainInfo);
 }
