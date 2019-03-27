@@ -13,8 +13,6 @@ const getMarket = async () => {
     const startTime = moment();
     // const ticker = await exchange.fetchTicker(symbol);
     const ticker = await exchange.fetchTickers();
-    console.log('============ ticker =============');
-    console.log(ticker);
     // const ticker = await exchange.fetchOrderBook(symbol);
     // const ticker = await exchange.loadMarkets();
     const arrQC = [];
@@ -24,10 +22,6 @@ const getMarket = async () => {
     const arrexchange = [];
     _.forEach(ticker, async (v, k) => {
         const arr = k.split('/');
-        console.log('============ arr =============');
-        console.log(arr);
-        console.log('============ `exchange:${arr[1]}:${arr[0]}`, JSON.stringify(v) =============');
-        console.log(`${exchangeSymbol}:${arr[1]}:${arr[0]}`, JSON.stringify(v));
         await redis.set(`${exchangeSymbol}:${arr[1]}:${arr[0]}`, JSON.stringify(v), 'EX', 60 * 60);
         if (k.endsWith('QC')) {
             arrQC.push(k);
@@ -45,14 +39,6 @@ const getMarket = async () => {
             arrexchange.push(k);
         }
     });
-
-    console.log('============ arrQC =============');
-    console.log(arrQC);
-    console.log(arrUSDT);
-    console.log(arrETH);
-    console.log(arrBTC);
-    console.log(arrexchange);
-    console.log('============ ticker =============');
 };
 
 module.exports = { getMarket };
