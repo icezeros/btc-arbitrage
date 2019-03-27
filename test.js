@@ -2,7 +2,7 @@ const ccxt = require('ccxt');
 const moment = require('moment');
 const _ = require('lodash');
 const BigNumber = require('bignumber.js');
-// const redis = require('./redis');
+const redis = require('./redis');
 
 // let exchange = new ccxt.binance();
 let exchangeSymbol = 'zb';
@@ -27,8 +27,8 @@ const getMarket = async () => {
         console.log('============ arr =============');
         console.log(arr);
         console.log('============ `exchange:${arr[1]}:${arr[0]}`, JSON.stringify(v) =============');
-        console.log(`exchange:${arr[1]}:${arr[0]}`, JSON.stringify(v));
-        // await redis.set(`exchange:${arr[1]}:${arr[0]}`, JSON.stringify(v));
+        console.log(`${exchangeSymbol}:${arr[1]}:${arr[0]}`, JSON.stringify(v));
+        await redis.set(`exchange:${arr[1]}:${arr[0]}`, JSON.stringify(v), 'EX', 60 * 60);
         if (k.endsWith('QC')) {
             arrQC.push(k);
         }
