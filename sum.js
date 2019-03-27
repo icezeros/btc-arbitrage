@@ -11,12 +11,12 @@ async function sum() {
         const XBTC = await getChainInfo(`${v}/BTC`);
         const XUSDT = await getChainInfo(`${v}/USDT`);
         const BTCUSDT = await getChainInfo('BTC/USDT');
-        // console.log('============ XBTC =============');
-        // console.log(XBTC);
-        // console.log('============ XUSDT =============');
-        // console.log(XUSDT);
-        // console.log('============ BTCUSDT =============');
-        // console.log(BTCUSDT);
+        console.log('============ XBTC =============');
+        console.log(XBTC);
+        console.log('============ XUSDT =============');
+        console.log(XUSDT);
+        console.log('============ BTCUSDT =============');
+        console.log(BTCUSDT);
         // console.log();
         // console.log();
         // console.log();
@@ -60,7 +60,6 @@ async function getChainInfo(chain) {
     console.log(chainInfo);
     return JSON.parse(chainInfo);
 }
-
 sum();
 async function fetchOrderBook(symbol) {
     const ccxt = require('ccxt');
