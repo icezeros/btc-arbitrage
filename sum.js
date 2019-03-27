@@ -45,9 +45,6 @@ async function sum() {
                 }
             } catch (error) {
                 console.log('============  =============');
-                console.log(XBTC);
-                console.log(BTCUSDT);
-                console.log(XUSDT);
                 console.log(error);
             }
         }
@@ -57,6 +54,8 @@ async function sum() {
 async function getChainInfo(chain) {
     const tmpArr = chain.split('/');
     const chainInfo = await redis.hget(`binance:hash:${tmpArr[1]}`, tmpArr[0]);
+    console.log('============ chainInfo =============');
+    console.log(chainInfo);
     return JSON.parse(chainInfo);
 }
 
