@@ -5,7 +5,7 @@ const BigNumber = require('bignumber.js');
 const redis = require('./redis');
 
 // let exchange = new ccxt.binance();
-let exchangeSymbol = 'zb';
+let exchangeSymbol = 'binance';
 let exchange = new ccxt[exchangeSymbol]();
 
 const getMarket = async () => {
