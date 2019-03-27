@@ -28,38 +28,6 @@ const getMarket = async () => {
             console.log(error);
         }
     });
-    console.log('============ arrQC =============');
-    // // console.log(data.arrQC);
-    // const data = await redis.hkeys('binance:hash:BTC');
-
-    // _.forEach(data, v => {
-    //     // const tmpArr = v.split('/');
-    //     const XBTC = ticker[`${v}/BTC`];
-    //     const XQC = ticker[v];
-    //     const BTCQC = ticker['BTC/USDT'];
-    //     if (XBTC) {
-    //         const TR_PRICE = new BigNumber(XBTC.info.last).times(new BigNumber(BTCQC.info.last));
-    //         const XQC_PRICE = new BigNumber(XQC.info.last);
-    //         const percent = TR_PRICE.minus(XQC_PRICE)
-    //             .dividedBy(XQC_PRICE)
-    //             .times(100);
-    //         // console.log(`============ ${v} =============`);
-    //         // console.log(TR_PRICE);
-    //         // console.log(XQC_PRICE);
-    //         // console.log(percent);
-    //         // console.log();
-    //         if (percent > 10) {
-    //             console.log(`============ ${v} =============`);
-    //             console.log(percent);
-    //             console.log(TR_PRICE);
-    //             console.log(XQC_PRICE);
-    //             console.log(XBTC.info);
-    //             console.log(XQC.info);
-    //             console.log(BTCQC.info);
-    //             console.log();
-    //         }
-    //     }
-    // });
 };
 
 module.exports = { getMarket };

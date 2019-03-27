@@ -22,19 +22,7 @@ async function sum() {
                 const percent = TR_PRICE.minus(XUSDT_PRICE)
                     .dividedBy(XUSDT_PRICE)
                     .times(100);
-                // console.log(`============ ${v} =============`);
-                // console.log(TR_PRICE);
-                // console.log(XUSDT_PRICE);
-                // console.log(percent);
-                // console.log();
-                console.log('============ percent =============');
-                console.log(v, percent);
-                console.log('============ TR_PRICE =============');
-                console.log(TR_PRICE);
-                console.log('============ XUSDT_PRICE =============');
-                console.log(XUSDT_PRICE);
-                console.log();
-                console.log();
+
                 if (percent > 5) {
                     console.log(`============ ${v} =============`);
                     console.log(percent);
