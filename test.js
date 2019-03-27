@@ -22,7 +22,7 @@ const getMarket = async () => {
     const arrexchange = [];
     _.forEach(ticker, async (v, k) => {
         const arr = k.split('/');
-        // await redis.set(`${exchangeSymbol}:${arr[1]}:${arr[0]}`, JSON.stringify(v), 'EX', 60 * 60);
+        await redis.set(`${exchangeSymbol}:${arr[1]}:${arr[0]}`, JSON.stringify(v), 'EX', 60 * 60);
         if (k.endsWith('QC')) {
             arrQC.push(k);
         }
