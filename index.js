@@ -1,11 +1,12 @@
-var http = require('http');
-var url = require('url');
+const http = require('http');
+const url = require('url');
+const { getMarket } = require('./test');
 
 function start(route, handle) {
     function onRequest(request, response) {
-        var urlObj = url.parse(request.url);
-        var pathname = urlObj.pathname;
-        var query = urlObj.query;
+        const urlObj = url.parse(request.url);
+        const pathname = urlObj.pathname;
+        const query = urlObj.query;
         console.log('Request for ' + pathname + ' received.' + ' query: ' + query);
         route(pathname, query, handle, response);
     }
@@ -15,3 +16,4 @@ function start(route, handle) {
 
 // exports.start = start;
 start();
+getMarket();
