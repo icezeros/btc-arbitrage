@@ -1,6 +1,7 @@
 const http = require('http');
 const url = require('url');
 const { getMarket } = require('./test');
+const { sum } = require('./sum');
 
 // function start(route, handle) {
 //     function onRequest(request, response) {
@@ -22,4 +23,5 @@ server.listen(process.env.PORT);
 
 setInterval(() => {
     getMarket();
-}, 5000);
+    sum();
+}, 3000);
