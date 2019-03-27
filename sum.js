@@ -22,25 +22,32 @@ async function sum() {
         // console.log();
 
         if (XBTC && XUSDT && BTCUSDT) {
-            const TR_PRICE = new BigNumber(XBTC.info.last).times(new BigNumber(BTCUSDT.info.last));
-            const XUSDT_PRICE = new BigNumber(XUSDT.info.last);
-            const percent = TR_PRICE.minus(XUSDT_PRICE)
-                .dividedBy(XUSDT_PRICE)
-                .times(100);
-            // console.log(`============ ${v} =============`);
-            // console.log(TR_PRICE);
-            // console.log(XUSDT_PRICE);
-            // console.log(percent);
-            // console.log();
-            if (percent > 5) {
-                console.log(`============ ${v} =============`);
-                console.log(percent);
-                console.log(`btc/usdt-->${v}/btc-->${v}/usdt`, TR_PRICE);
-                console.log(`${v}/usdt`, XUSDT_PRICE);
-                console.log(XBTC.info);
-                console.log(XUSDT.info);
-                console.log(BTCUSDT.info);
-                console.log();
+            try {
+                const TR_PRICE = new BigNumber(XBTC.info.last).times(new BigNumber(BTCUSDT.info.last));
+                const XUSDT_PRICE = new BigNumber(XUSDT.info.last);
+                const percent = TR_PRICE.minus(XUSDT_PRICE)
+                    .dividedBy(XUSDT_PRICE)
+                    .times(100);
+                // console.log(`============ ${v} =============`);
+                // console.log(TR_PRICE);
+                // console.log(XUSDT_PRICE);
+                // console.log(percent);
+                // console.log();
+                if (percent > 5) {
+                    console.log(`============ ${v} =============`);
+                    console.log(percent);
+                    console.log(`btc/usdt-->${v}/btc-->${v}/usdt`, TR_PRICE);
+                    console.log(`${v}/usdt`, XUSDT_PRICE);
+                    console.log(XBTC.info);
+                    console.log(XUSDT.info);
+                    console.log(BTCUSDT.info);
+                    console.log();
+                }
+            } catch (error) {
+                console.log('============  =============');
+                console.log(XBTC);
+                console.log(BTCUSDT);
+                console.log(XUSDT);
             }
         }
     }
