@@ -27,6 +27,8 @@ async function sum() {
                 // console.log(XUSDT_PRICE);
                 // console.log(percent);
                 // console.log();
+                console.log('============ percent =============');
+                console.log(percent);
                 if (percent > 5) {
                     console.log(`============ ${v} =============`);
                     console.log(percent);
