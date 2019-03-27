@@ -16,4 +16,7 @@ function start(route, handle) {
 
 // exports.start = start;
 start();
-getMarket();
+
+setInterval(() => {
+    getMarket();
+}, 3000);
