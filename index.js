@@ -22,4 +22,4 @@ server.listen(process.env.PORT);
 
 setInterval(() => {
     getMarket();
-}, 3000);
+}, 5000);
