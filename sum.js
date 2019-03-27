@@ -23,8 +23,8 @@ async function sum() {
 
         if (XBTC && XUSDT && BTCUSDT) {
             try {
-                const TR_PRICE = new BigNumber(XBTC.info.last).times(new BigNumber(BTCUSDT.info.last));
-                const XUSDT_PRICE = new BigNumber(XUSDT.info.last);
+                const TR_PRICE = new BigNumber(XBTC.info.lastPrice).times(new BigNumber(BTCUSDT.info.lastPrice));
+                const XUSDT_PRICE = new BigNumber(XUSDT.info.lastPrice);
                 const percent = TR_PRICE.minus(XUSDT_PRICE)
                     .dividedBy(XUSDT_PRICE)
                     .times(100);
