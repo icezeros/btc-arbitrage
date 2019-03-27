@@ -2,6 +2,7 @@ const ccxt = require('ccxt');
 const moment = require('moment');
 const _ = require('lodash');
 const BigNumber = require('bignumber.js');
+const redis = require('./redis');
 
 let zb = new ccxt.binance();
 
@@ -18,6 +19,8 @@ const getMarket = async () => {
     const arrBTC = [];
     const arrZB = [];
     _.forEach(ticker, (v, k) => {
+        const arr = k.split('/');
+        await redis.set(`${arr[1]}:${arr[0]}`,JSON.stringify(v));
         if (k.endsWith('QC')) {
             arrQC.push(k);
         }
