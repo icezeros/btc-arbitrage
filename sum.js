@@ -28,7 +28,7 @@ async function sum() {
                 // console.log(percent);
                 // console.log();
                 console.log('============ percent =============');
-                console.log(percent);
+                console.log(v, percent);
                 if (percent > 5) {
                     console.log(`============ ${v} =============`);
                     console.log(percent);
