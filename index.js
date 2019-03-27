@@ -20,6 +20,6 @@ const { getMarket } = require('./test');
 const server = http.createServer(function(request, response) {});
 server.listen(process.env.PORT);
 
-setInterval(() => {
-    getMarket();
-}, 5000);
+// setInterval(() => {
+getMarket();
+// }, 5000);
