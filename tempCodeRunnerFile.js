@@ -1,1 +1,4 @@
-console.log(JSON.parse(null))
+if(null&&11){
+  console.log('============  =============');
+  console.log();
+}

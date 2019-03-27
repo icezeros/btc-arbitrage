@@ -11,12 +11,6 @@ async function sum() {
         const XBTC = await getChainInfo(`${v}/BTC`);
         const XUSDT = await getChainInfo(`${v}/USDT`);
         const BTCUSDT = await getChainInfo('BTC/USDT');
-        console.log('============ XBTC =============');
-        console.log(XBTC);
-        console.log('============ XUSDT =============');
-        console.log(XUSDT);
-        console.log('============ BTCUSDT =============');
-        console.log(BTCUSDT);
         // console.log();
         // console.log();
         // console.log();
@@ -54,10 +48,6 @@ async function sum() {
 async function getChainInfo(chain) {
     const tmpArr = chain.split('/');
     const chainInfo = await redis.hget(`binance:hash:${tmpArr[1]}`, tmpArr[0]);
-    console.log('============ chainInfo =============');
-    console.log(`binance:hash:${tmpArr[1]}`);
-    console.log(tmpArr[0]);
-    console.log(chainInfo);
     return JSON.parse(chainInfo);
 }
 sum();
