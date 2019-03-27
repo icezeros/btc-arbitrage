@@ -8,14 +8,9 @@ async function sum() {
     // console.log(data);
 
     for (let v of data) {
-        const startTime = moment();
         const XBTC = await getChainInfo(`${v}/BTC`);
         const XUSDT = await getChainInfo(`${v}/USDT`);
         const BTCUSDT = await getChainInfo('BTC/USDT');
-        const endTime = moment();
-        console.log('============ during =============');
-        console.log(endTime - startTime);
-
         // console.log('============ XBTC =============');
         // console.log(XBTC);
         // console.log('============ XUSDT =============');
@@ -42,9 +37,9 @@ async function sum() {
                 console.log(percent);
                 console.log(`btc/usdt-->${v}/btc-->${v}/usdt`, TR_PRICE);
                 console.log(`${v}/usdt`, XUSDT_PRICE);
-                // console.log(XBTC.info);
-                // console.log(XUSDT.info);
-                // console.log(BTCUSDT.info);
+                console.log(XBTC.info);
+                console.log(XUSDT.info);
+                console.log(BTCUSDT.info);
                 console.log();
             }
         }
